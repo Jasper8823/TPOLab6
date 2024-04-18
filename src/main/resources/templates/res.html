@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated personal data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #8a7979;
+        }
+        th, td {
+            border: 1px solid #030000;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Generated personal data</h2>
+    <table>
+        <thead>
+        <tr>
+            <th th:text="${header.getFirstName()}"></th>
+            <th th:text="${header.getLastName()}"></th>
+            <th th:text="${header.getDateOfBirth()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getAddress() != null}" th:text="${header.getAddress()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getUniversityName() != null}" th:text="${header.getUniversityName()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getOriginCountry() != null}" th:text="${header.getOriginCountry()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getClashOfClansFavoriteDefensiveBuilding() != null}" th:text="${header.getClashOfClansFavoriteDefensiveBuilding()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getClashOfClansFavoriteTroop() != null}" th:text="${header.getClashOfClansFavoriteTroop()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getClashOfClansRank() != null}" th:text="${header.getClashOfClansRank()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getSpongeBobFavoriteEpisode() != null}" th:text="${header.getSpongeBobFavoriteEpisode()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getSpongeBobFavoriteCharacter() != null}" th:text="${header.getSpongeBobFavoriteCharacter()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getFavoritePokemon() != null}" th:text="${header.getFavoritePokemon()}"></th>
+            <th th:if="${dto.gList() != null && not #lists.isEmpty(dto.gList()) && dto.gList().get(0).getFavoritePokemonType() != null}" th:text="${header.getFavoritePokemonType()}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person : ${dto.gList()}">
+            <td th:text="${person.getFirstName()}"></td>
+            <td th:text="${person.getLastName()}"></td>
+            <td th:text="${person.getDateOfBirth()}"></td>
+            <td th:text="${person.getAddress()}" th:if="${person.getAddress() != null}"></td>
+            <td th:text="${person.getUniversityName()}" th:if="${person.getUniversityName() != null}"></td>
+            <td th:text="${person.getOriginCountry()}" th:if="${person.getOriginCountry() != null}"></td>
+            <td th:text="${person.getClashOfClansFavoriteDefensiveBuilding()}" th:if="${person.getClashOfClansFavoriteDefensiveBuilding() != null}"></td>
+            <td th:text="${person.getClashOfClansFavoriteTroop()}" th:if="${person.getClashOfClansFavoriteTroop() != null}"></td>
+            <td th:text="${person.getClashOfClansRank()}" th:if="${person.getClashOfClansRank() != null}"></td>
+            <td th:text="${person.getSpongeBobFavoriteEpisode()}" th:if="${person.getSpongeBobFavoriteEpisode() != null}"></td>
+            <td th:text="${person.getSpongeBobFavoriteCharacter()}" th:if="${person.getSpongeBobFavoriteCharacter() != null}"></td>
+            <td th:text="${person.getFavoritePokemon()}" th:if="${person.getFavoritePokemon() != null}"></td>
+            <td th:text="${person.getFavoritePokemonType()}" th:if="${person.getFavoritePokemonType() != null}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

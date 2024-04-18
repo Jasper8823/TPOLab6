@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Test Personal Data</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-check-label {
+            padding-left: 5px;
+        }
+        .btn-primary {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Generator of personal data</h1>
+    <form action="/generate" method="post">
+        <h2><div class="mb-3">
+            <label for="count" class="form-label">Number of Entries:</label>
+            <input type="number" class="form-control" id="count" name="count" required>
+        </div>
+        </h2>
+        <h3><div class="mb-3">
+            <label for="language" class="form-label">Language:</label>
+            <select class="form-select" id="language" name="language">
+                <option value="EN">English</option>
+                <option value="DE">German</option>
+                <option value="PT">Portuguese</option>
+                <option value="BR">Brazil</option>
+                <option value="ES">Spanish</option>
+                <option value="IT">Italian</option>
+                <option value="RU">Russian</option>
+                <option value="PL">Polish</option>
+                <option value="FR">French</option>
+                <option value="TH">Thai</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Additional Fields:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="address" name="choice" value="address">
+                <label class="form-check-label" for="address">Address</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="university" name="choice" value="university">
+                <label class="form-check-label" for="university">University Name</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="originCountry" name="choice" value="originCountry">
+                <label class="form-check-label" for="originCountry">Country of Origin</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="clashOfClansFavoriteDefensiveBuilding" name="choice" value="clashOfClansFavoriteDefensiveBuilding">
+                <label class="form-check-label" for="clashOfClansFavoriteDefensiveBuilding">Clash of Clans Favorite Defensive Building</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="clashOfClansFavoriteTroop" name="choice" value="clashOfClansFavoriteTroop">
+                <label class="form-check-label" for="clashOfClansFavoriteTroop">Clash of Clans Favorite Unit</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="clashOfClansRank" name="choice" value="clashOfClansRank">
+                <label class="form-check-label" for="clashOfClansRank">Clash of Clans Rank</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="spongeBobFavoriteEpisode" name="choice" value="spongeBobFavoriteEpisode">
+                <label class="form-check-label" for="spongeBobFavoriteEpisode">Sponge Bob Favorite Episode</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="spongeBobFavoriteCharacter" name="choice" value="spongeBobFavoriteCharacter">
+                <label class="form-check-label" for="spongeBobFavoriteCharacter">Sponge Bob Favorite Character</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="favoritePokemon" name="choice" value="favoritePokemon">
+                <label class="form-check-label" for="favoritePokemon">Favorite Pokemon</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="favoritePokemonType" name="choice" value="favoritePokemonType">
+                <label class="form-check-label" for="favoritePokemonType">Favorite Pokemon Type</label>
+            </div>
+        </div></h3>
+        <button type="submit" class="btn btn-primary">Generate Data</button>
+    </form>
+</div></body></html>
